@@ -1,0 +1,60 @@
+<div class="container-overlap bg-blue-500">
+	<div class="media">
+		<div class="col-sm-offset-3 col-sm-6">
+			<div class="media-left">
+				<a href="#">
+					<img class="media-object img-circle thumb64" src="src/img/photo_profil.jpg" alt="User">
+				</a>
+			</div>
+			<div class="media-body media-middle">
+				<h4 class="media-heading">{{home.user.firstname}} {{home.user.lastname}}</h4><span class="text-muted">{{ home.user.birthDate | date:'Né le dd/MM/yyyy'}}</span>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-offset-3 col-sm-6">
+			<form class="card" ng-submit="home.saveUser($event)">
+				<h5 class="card-heading">
+					Présentation
+				</h5>
+				<div class="card-body">
+				    <div class="form-group">
+				      <label for="name">Nom</label>
+				      <input type="name" class="form-control" id="name" placeholder="nom" ng-model="home.user.lastname">
+				    </div>
+				    <div class="form-group">
+				      <label for="name">Prénom</label>
+				      <input type="name" class="form-control" id="name" placeholder="prénom" ng-model="home.user.firstname">
+				    </div>
+				    <div class="panel panel-default">
+							<div class="panel-body">
+							<div class="col-xs-5 col-sm-5 col-md-5">Fille / Garçon</div>
+							<div class="col-xs-1 col-sm-1 col-md-1">
+								<div class="material-switch text-block">
+		                          <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" ng-model="home.user.isMale" />
+		                          <label for="someSwitchOptionInfo" class="label-info"></label>
+		                        </div>
+		                    </div>
+		                </div>
+					</div>
+				    <div class="form-group">
+				      <label for="date">Date de naissance</label>
+				      <input type="date" class="form-control" id="date" placeholder="date de naissance" ng-model="home.user.birthDate">
+				    </div>
+				    <div class="form-group">
+				      <label for="place">Lieu de naissance</label>
+				      <input type="place" class="form-control" id="place" placeholder="lieu de naissance" ng-model="home.user.birthLocation">
+				    </div>
+				    <div class="form-group">
+					    <div class="form-group">
+					      	<label for="nameAtcdHdtr">Antécédents héréditaires</label>
+					      	<textarea class="form-control" rows="10" id="name" placeholder="Diabète (mère), obésité (grand-père paternel), cancer,..." ng-model="home.user.antecedentsHereditaires"></textarea>
+					    </div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

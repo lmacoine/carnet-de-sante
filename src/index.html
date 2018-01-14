@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mon Carnet de Santé</title>
+</head>
+<body class="theme-1" ng-app="myHealthBookApp">
+	<div class="layout-container" ng-class="{'sidebar-visible': sidebarVisible}">
+		<header class="header-container">
+			<nav>
+			    <ul>
+			    	<li class="visible-xs visible-sm hidden-md" ng-class="{'active': sidebarVisible}" style="">
+			    		<a class="menu-link menu-link-slide" href="" ng-click="toggleSidebar()" ng-class="app.header.menulink"><span><em></em></span></a>
+			    	</li>
+			  </ul>
+			</nav>
+		</header>
+		<aside class="sidebar-container">
+			<div class="sidebar-header">
+				<div class="sidebar-header-logo">
+					<span class="sidebar-header-logo-text">Mon Carnet</span>
+				</div>
+			</div>
+			<div class="sidebar-content">
+				<nav class="sidebar-nav">
+					<ul>
+						<li><a ui-sref="home" ui-sref-active="active">Accueil</a></li>
+						<li><a ui-sref="allerg" ui-sref-active="active">Allergies</a></li>
+						<li><a ui-sref="atcd" ui-sref-active="active">Antécédents</a></li>
+						<li><a ui-sref="surv" ui-sref-active="active">Surveillance</a></li>
+						<li><a ui-sref="vacc" ui-sref-active="active">Vaccinations</a></li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<div class="sidebar-layout-obfuscator" ng-click="closeSidebar()"></div>
+		<main class="main-container">
+			<section>
+				<div>
+					<div ui-view></div>
+				</div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-heading">
+					<div class="card-title">Ajouter un examen</div>
+					<small>Examen réalisé avec un médecin.</small>
+				</div>
+				<div class="card-body">
+					<form ng-submit="surv.addExam(surv.newExam);">
+					    <div class="form-group">
+					      	<label for="date">Date</label>
+					      	<input type="date" class="form-control" id="date" ng-model="surv.newExam.date" placeholder="13/12/2017">
+					    </div>
+					    <div class="form-group">
+					      	<label for="text">Âge</label>
+					      	<input type="text" class="form-control" id="text" ng-model="surv.newExam.age" placeholder="6 mois">
+					    </div>
+					    <div class="form-group">
+					      	<label for="taille">Taille</label>
+					      	<input type="text" class="form-control" id="taille" ng-model="surv.newExam.taille" placeholder="62 cm">
+					    </div>
+					    <div class="form-group">
+					      	<label for="text">Poids</label>
+					      	<input type="text" class="form-control" id="text" ng-model="surv.newExam.poids" placeholder="8 kg">
+					    </div>
+					    <div class="form-group">
+					      	<label for="text">Périmètre Crânien</label>
+					      	<input type="text" class="form-control" id="text" ng-model="surv.newExam.perimetreCranien" placeholder="41 cm">
+					    </div>
+					    <div class="form-group">
+					      	<label for="text">Développement psychomoteur, Examen clinique</label>
+					      	<textarea class="form-control" id="text" row="3" ng-model="surv.newExam.observations" placeholder="Bon développement.."></textarea>
+					    </div>
+					    <div class="form-group">
+					     	<label for="text">Nom du Médecin</label>
+					    	<input type="text" class="form-control" id="text" ng-model="surv.newExam.docteur.fullname" placeholder="Dr Diagnostic">
+					    	<input type="email" class="form-control" id="email" ng-model="surv.newExam.docteur.email" placeholder="Dr.Diagnostic@medecin.com">
+					    	<input type="adress" class="form-control" id="adress" ng-model="surv.newExam.docteur.adress" placeholder="15 rue Leblanc 75015 Paris">
+					    	<input type="tel" class="form-control" id="tel" ng-model="surv.newExam.docteur.phone" placeholder="060200000">
+					    </div>
+					    <hr>
+					    <div class="text-center">
+					        <button class="btn btn-info btn-add" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+					    </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="card">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Age</th>
+								<th>Taille</th>
+								<th>Poids</th>
+								<th>Périmètre Crânien</th>
+								<th>Observations</th>
+								<th>Médecin</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="examen in surv.examens">
+								<td>{{examen.date | date:'dd/MM/yyyy'}}</td>
+								<td>{{examen.age}}</td>
+								<td>{{examen.taille}}</td>
+								<td>{{examen.poids}}</td>
+								<td>{{examen.perimetreCranien}}</td>
+								<td>{{examen.observations}}</td>
+								<td>{{examen.docteur.fullname}}<br/>
+								{{examen.docteur.email}}<br/>
+								{{examen.docteur.address}}<br/>
+								{{examen.docteur.phone}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

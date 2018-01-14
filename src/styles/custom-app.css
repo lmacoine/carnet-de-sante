@@ -1,0 +1,100 @@
+@import url('../../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+
+/* page home : accueil */
+body {
+	
+}
+
+.nav-justified {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-right: 1px solid #d5d5d5;
+    border-left: 1px solid #fff;
+}
+
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+    background-color: #f9a9e6;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+    background-color: #f9a9e6;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+
+
+
+/* Page atcd : allergies/antécédents */
+
+.form-control {
+    font-size: 12px;
+}
+
+
+/* Page vacc : vaccinations */
+.vaccination {
+    margin: 15px;
+}
+
+.add-vaccin {
+    border: 1px solid #BA4E97;
+    padding: 25px;
+    border-radius: 20px;
+}
+.btn-add {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 36px;
+    color: #ffffff;
+}
+
+.btn-pink {
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 1.33;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #BA4E97;
+}

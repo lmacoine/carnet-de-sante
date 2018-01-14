@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-5">
+			<form ng-submit="atcd.addAtcd(atcd.newAtcd);">
+			    <div class="form-group">
+			      	<label for="nameDiagnostic">Diagnostic</label>
+			      	<input type="text" class="form-control" id="nameDiagnostic" ng-model="atcd.newAtcd.nameAntecedents" placeholder="Diagnostic">
+			    </div>
+			    <div class="form-group">
+			      	<label for="dateDiagnostic">Date du Diagnostic</label>
+			      	<input type="date" class="form-control" id="dateDiagnostic" ng-model="atcd.newAtcd.dateDiscovered" placeholder="Date du diagnostic">
+			    </div>
+			    <div class="form-group">
+			     	<label for="nameDr">Nom du Médecin</label>
+			    	<input type="text" class="form-control" id="nameDr" ng-model="atcd.newAtcd.docteur.fullname" placeholder="Dr Diagnostic">
+			    	<input type="email" class="form-control" id="emailDr" ng-model="atcd.newAtcd.docteur.email" placeholder="Dr.Diagnostic@medecin.com">
+			    	<input type="text" class="form-control" id="adressDr" ng-model="atcd.newAtcd.docteur.adress" placeholder="adresse">
+			    	<input type="tel" class="form-control" id="phoneDr" ng-model="atcd.newAtcd.docteur.phone" placeholder="0600000000">
+			    </div>
+			    <div class="form-group">
+			     	<label for="nameEts">Coordonnées de l'établissement de santé (s'il y a lieu)</label>
+			    	<input type="text" class="form-control" id="nameEts" ng-model="atcd.newAtcd.etablissement.name" placeholder="Hôpital ou Clinique">
+			    	<input type="email" class="form-control" id="emailEts" ng-model="atcd.newAtcd.etablissement.email" placeholder="contact@ap-hp.fr">
+			    	<input type="text" class="form-control" id="adressEts" ng-model="atcd.newAtcd.etablissement.adress" placeholder="15 rue Lecourbe 75015 Paris">
+			    	<input type="tel" class="form-control" id="phoneEts" ng-model="atcd.newAtcd.etablissement.phone" placeholder="0145000000">
+			    </div>
+			    <div class="form-group">
+			     	<label for="nameEmergency">Coordonnées du Médecin (ou service) à contacter en cas d'urgence</label>
+			    	<input type="text" class="form-control" id="nameEmergency" ng-model="atcd.newAtcd.docteurEmergency.fullname" placeholder="Docteur ou Service">
+			    	<input type="text" class="form-control" id="adressEmergency" ng-model="atcd.newAtcd.docteurEmergency.adress" placeholder="adresse">
+			    	<input type="tel" class="form-control" id="phoneEmergency" ng-model="atcd.newAtcd.docteurEmergency.phone" placeholder="0123456789">
+			    </div>
+			    <div class="text-center">
+			         <button class="btn btn-info btn-add" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+			    </div>
+			</form>
+		</div>
+		<div class="col-md-7">
+			<div ng-repeat="antecedent in atcd.antecedents">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{antecedent.nameAntecedents}}</h3>
+					</div>
+					<div class="panel-body">
+						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{antecedent.dateDiscovered | date:'dd/MM/yyyy'}}<br/>
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{antecedent.docteur.fullname}}<br/>
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{antecedent.docteur.email}}<br/>
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{antecedent.docteur.address}}<br/>
+						<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{antecedent.docteur.phone}}<br/>
+						<br/>
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{antecedent.etablissement.name}}<br/>
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{antecedent.etablissement.email}}<br/>
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{antecedent.etablissement.adress}}<br/>
+						<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{antecedent.etablissement.phone}}<br/>
+						<br/>
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{antecedent.docteurEmergency.fullname}}<br/>
+						<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{antecedent.docteurEmergency.address}}<br/>
+						<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> {{antecedent.docteurEmergency.phone}}<br/>
+						<br/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
